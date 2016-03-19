@@ -1,0 +1,31 @@
+<div class="container-fluid"><h4>Ésta es una lista. Las listas son chéveres. Agrégale elementos a la lista.</h4></div>
+
+<hr> 
+
+<form>
+    <div class="container col-sm-6 col-md-4 col-lg-4">
+      <label>Nombre</label>
+      <input ng-model="newParty.name">
+    </div>
+    <div class="container col-sm-6 col-md-4 col-lg-4">
+      <label>Descripción</label>
+      <textarea rows="3" cols="30" ng-model="newParty.description"></textarea>
+    </div>
+    <div class="container col-sm-12 col-md-12 col-lg-12">
+      <button class="btn btn-primary" ng-click="newParty.owner=$root.currentUser._id; parties.save(newParty); newParty='';">Agregar</button>
+      <button class="btn" ng-click="removeAll()">Borrar Todo</button>
+      <button class="btn btn-danger btn-debug" ng-click="show()">debug</button>
+    </div>
+  </form>
+
+
+<div class="container col-sm-12 col-md-12 col-lg-12">
+  <ul>
+    <li ng-repeat="party in parties">
+      <h4><a href="/parties/{{party._id}}">{{party.name}}</a></h4>
+      <p>{{party.description}}</p>
+      
+      <button class="btn btn-danger btn-sm glyphicon glyphicon-remove" style="font-weight: 600; color: #303030;" ng-click="remove(party)"></button>
+    </li>
+  </ul>
+</div>

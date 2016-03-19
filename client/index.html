@@ -1,0 +1,27 @@
+<head>
+	<meta name="viewport" content="width=device-width">
+	<meta name="theme-color" content="#673AB5">
+	<title>Test App</title>
+  	<base href="/">
+</head>
+<body>
+	<div ng-app="socially" class="row-fluid">
+
+	  
+	  	<div class="span12 navbar navbar-inverse">
+	  		<h2>
+	  	    	<a href="/parties">{{currentUser._id}}</a>
+	  	  	</h2>
+	  	  	<blaze-template name="loginButtons"></blaze-template>
+	  	</div>
+
+	  	<div ui-view class="container-fluid"></div>
+
+	</div>
+
+ 
+
+</body>
+
+
+
